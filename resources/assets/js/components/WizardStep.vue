@@ -1,21 +1,30 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Example Component</div>
-
-                    <div class="panel-body">
-                        I'm an example component!
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div role="tabpanel" class="tab-pane" :class="{'active': active}" id="id">
+        <slot></slot>
     </div>
 </template>
 
 <script>
+    import voca from 'voca'
     export default {
+        props:{
+            title:{
+                type: String,
+                required: true
+            },
+            active:{
+                type:[Boolean,String],
+                default:false
+            }
+        },
+        computed : {
+            id: function(){
+                return voca.latinise(voca.camelCase(this.title))
+            },
+            link: function(){
+                return '#' + this.id
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         }
