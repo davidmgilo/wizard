@@ -6,12 +6,12 @@
             </div>
         </div>
         <ul class="nav nav-tabs nav-justified">
-            <li v-for="step in steps" :class="{'active' : step.active}" :href="step.link" :aria-control="step.id" data-toogle=""></li>
+            <li v-for="step in steps" :class="{'active' : step.active}"><a :href="step.link" :aria-control="step.id" data-toogle="tab">{{step.title}}</a></li>
         </ul>
         <div class="tab-content">
             <slot></slot>
         </div>
-        <<div class="box-footer">
+        <div class="box-footer">
             <button type="submit" class="btn btn-primary btn-flat pull-left">Previous</button>
             <button type="submit" class="btn btn-primary btn-flat pull-right">Next</button>
         </div>
@@ -20,6 +20,12 @@
 
 <script>
     export default {
+        data(){
+          return {
+              steps: [],
+              currentStep: 1
+          }
+        },
         mounted() {
             console.log('Component mounted.')
             this.$children.forEach( (step) =>{
