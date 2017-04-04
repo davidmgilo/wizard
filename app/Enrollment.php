@@ -11,6 +11,15 @@ class Enrollment extends Model implements Stateful
     use StatefulTrait;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'state'
+    ];
+
+    /**
      * Enrollment States
      *
      * @var array
@@ -51,6 +60,9 @@ class Enrollment extends Model implements Stateful
      */
     protected function validateStep1step2()
     {
-        return true;
+        if($this->user_id != null){
+            return true;
+        }
+        return false;
     }
 }
