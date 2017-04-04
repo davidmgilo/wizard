@@ -24,4 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
     Route::get('adminlte', 'AdminlteController@index')->name('adminlte');
 
+    Route::get('users', 'UsersController@fetchUsers');
+
+
 });

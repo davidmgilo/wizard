@@ -17,6 +17,7 @@ class CreatePeopleTable extends Migration
             $table->increments('id');
             $table->string('address');
             $table->string('city');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }

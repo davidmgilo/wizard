@@ -2,16 +2,9 @@
     <form method="post" @submit.prevent="submit" @keydown="form.errors.clear($event.target.name)">
         <div class="form-group has-feedback" :class="{'has-error': form.errors.has('user')}">
             <label for="user">User:</label>
-            <input type="text" class="form-control" placeholder="" name="user" value="" v-model="form.user" id="user" autofocus/>
 
-            <select class="form-control select2" style="width: 100%;">
-                <option selected="selected">Alabama</option>
-                <option>Alaska</option>
-                <option>California</option>
-                <option>Delaware</option>
-                <option>Tennessee</option>
-                <option>Texas</option>
-                <option>Washington</option>
+            <select class="form-control select2" style="width: 100%;" id="user">
+                <option v-for="user in users"  :value="user.id">{{ user.name }}</option>
             </select>
 
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -26,12 +19,17 @@
     export default {
         data: function(){
             return {
-                form : new Form({user: ''})
+                form : new Form({user: ''}),
+                users : [
+                    {'id':1,'name':'David Martinez'},
+                    {'id':2,'name':'Sergi Tur'},
+                ]
             }
         },
         mounted() {
             console.log('Component mounted.')
             this.initialitzeSelect2()
+            this.fetchUsers()
         },
         methods : {
             submit () {
@@ -45,6 +43,11 @@
             },
             initialitzeSelect2 () {
                 $(".select2").select2();
+            },
+            fetchUsers () {
+                axios.get('/users').then(response => {
+                    this.users = response.data;
+                });
             }
         }
     }

@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Enrollment');
     }
+
+    public function person()
+    {
+        return $this->hasOne('App\Person');
+    }
 }

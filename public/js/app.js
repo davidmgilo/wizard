@@ -12702,24 +12702,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            form: new __WEBPACK_IMPORTED_MODULE_0_acacha_forms___default.a({ user: '' })
+            form: new __WEBPACK_IMPORTED_MODULE_0_acacha_forms___default.a({ user: '' }),
+            users: [{ 'id': 1, 'name': 'David Martinez' }, { 'id': 2, 'name': 'Sergi Tur' }]
         };
     },
     mounted: function mounted() {
         console.log('Component mounted.');
         this.initialitzeSelect2();
+        this.fetchUsers();
     },
 
     methods: {
@@ -12728,6 +12723,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         initialitzeSelect2: function initialitzeSelect2() {
             $(".select2").select2();
+        },
+        fetchUsers: function fetchUsers() {
+            var _this = this;
+
+            axios.get('/users').then(function (response) {
+                _this.users = response.data;
+            });
         }
     }
 });
@@ -43455,32 +43457,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "for": "user"
     }
-  }, [_vm._v("User:")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.form.user),
-      expression: "form.user"
-    }],
-    staticClass: "form-control",
+  }, [_vm._v("User:")]), _vm._v(" "), _c('select', {
+    staticClass: "form-control select2",
+    staticStyle: {
+      "width": "100%"
+    },
     attrs: {
-      "type": "text",
-      "placeholder": "",
-      "name": "user",
-      "value": "",
-      "id": "user",
-      "autofocus": ""
-    },
-    domProps: {
-      "value": (_vm.form.user)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.form.user = $event.target.value
-      }
+      "id": "user"
     }
-  }), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('span', {
+  }, _vm._l((_vm.users), function(user) {
+    return _c('option', {
+      domProps: {
+        "value": user.id
+      }
+    }, [_vm._v(_vm._s(user.name))])
+  })), _vm._v(" "), _c('span', {
     staticClass: "glyphicon glyphicon-user form-control-feedback"
   }), _vm._v(" "), (_vm.form.errors.has('user')) ? _c('span', {
     staticClass: "help-block",
@@ -43496,18 +43487,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [(_vm.form.submitting) ? _c('i', {
     staticClass: "fa fa-refresh fa-spin"
   }) : _vm._e(), _vm._v("Next")])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('select', {
-    staticClass: "form-control select2",
-    staticStyle: {
-      "width": "100%"
-    }
-  }, [_c('option', {
-    attrs: {
-      "selected": "selected"
-    }
-  }, [_vm._v("Alabama")]), _vm._v(" "), _c('option', [_vm._v("Alaska")]), _vm._v(" "), _c('option', [_vm._v("California")]), _vm._v(" "), _c('option', [_vm._v("Delaware")]), _vm._v(" "), _c('option', [_vm._v("Tennessee")]), _vm._v(" "), _c('option', [_vm._v("Texas")]), _vm._v(" "), _c('option', [_vm._v("Washington")])])
-}]}
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
