@@ -39,12 +39,21 @@
                     })
             },
             initialitzeSelect2 () {
-                $(".select2").select2();
+                var component = this
+                $(".select2").select2().on('TODO', function (event) {
+                    component.form.set('user', userId)
+                    component.form.error.clear()
+                });
             },
             fetchUsers () {
                 axios.get('/users').then(response => {
                     this.users = response.data;
                 });
+            }
+        },
+        watch: {
+            'form.user': function(user){
+                //TODO API SELECT2 PER seleccionar user la user.id
             }
         }
     }

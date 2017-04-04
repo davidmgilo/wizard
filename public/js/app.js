@@ -12726,7 +12726,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         initialitzeSelect2: function initialitzeSelect2() {
-            $(".select2").select2();
+            var component = this;
+            $(".select2").select2().on('TODO', function (event) {
+                component.form.set('user', userId);
+                component.form.error.clear();
+            });
         },
         fetchUsers: function fetchUsers() {
             var _this = this;
@@ -12734,6 +12738,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.get('/users').then(function (response) {
                 _this.users = response.data;
             });
+        }
+    },
+    watch: {
+        'form.user': function formUser(user) {
+            //TODO API SELECT2 PER seleccionar user la user.id
         }
     }
 });
