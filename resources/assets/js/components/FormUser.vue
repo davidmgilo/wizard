@@ -3,6 +3,17 @@
         <div class="form-group has-feedback" :class="{'has-error': form.errors.has('user')}">
             <label for="user">User:</label>
             <input type="text" class="form-control" placeholder="" name="user" value="" v-model="form.user" id="user" autofocus/>
+
+            <select class="form-control select2" style="width: 100%;">
+                <option selected="selected">Alabama</option>
+                <option>Alaska</option>
+                <option>California</option>
+                <option>Delaware</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Washington</option>
+            </select>
+
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
             <span class="help-block" v-if="form.errors.has('user')" v-text="form.errors.get('user')"></span>
         </div>
@@ -20,6 +31,7 @@
         },
         mounted() {
             console.log('Component mounted.')
+            this.initialitzeSelect2()
         },
         methods : {
             submit () {
@@ -30,6 +42,9 @@
                     .catch(error => {
 
                     })
+            },
+            initialitzeSelect2 () {
+                $(".select2").select2();
             }
         }
     }

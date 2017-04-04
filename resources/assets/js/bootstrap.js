@@ -14,6 +14,7 @@ require('bootstrap-less');
 require('admin-lte');
 window.toastr = require('toastr');
 require('icheck');
+require('select2');
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
