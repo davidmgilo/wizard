@@ -17,6 +17,7 @@ Vue.component('example', require('./components/Example.vue'));
 
 Vue.component('wizard', require('./components/Wizard.vue'));
 Vue.component('wizard-step', require('./components/WizardStep.vue'));
+Vue.component('form-user', require('./components/FormUser.vue'));
 
 const app = new Vue({
     el: '#app'
