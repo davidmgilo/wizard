@@ -26,5 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('users', 'UsersController@fetchUsers');
 
+    Route::post('/enrollment/user', 'EnrollmentController@user');
 
+    Route::post('/enrollment/person', 'EnrollmentController@person');
 });

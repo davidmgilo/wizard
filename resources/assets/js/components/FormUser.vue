@@ -1,10 +1,10 @@
 <template>
-    <form method="post" @submit.prevent="submit" @keydown="form.errors.clear($event.target.name)">
+    <form method="post" @submit.prevent="submit" @keydown="form.errors.clear($event.target.user)">
         <div class="form-group has-feedback" :class="{'has-error': form.errors.has('user')}">
             <label for="user">User:</label>
 
             <select class="form-control select2" style="width: 100%;" id="user">
-                <option v-for="user in users"  :value="user.id">{{ user.name }}</option>
+                <option v-for="user in users" :value="user.id">{{ user.name }}</option>
             </select>
 
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -20,10 +20,7 @@
         data: function(){
             return {
                 form : new Form({user: ''}),
-                users : [
-                    {'id':1,'name':'David Martinez'},
-                    {'id':2,'name':'Sergi Tur'},
-                ]
+                users : []
             }
         },
         mounted() {
@@ -35,10 +32,10 @@
             submit () {
                 this.form.post('/enrollment/user')
                     .then( response => {
-
+                        console.log('TODO')
                     })
                     .catch(error => {
-
+                        console.log('ERROR')
                     })
             },
             initialitzeSelect2 () {

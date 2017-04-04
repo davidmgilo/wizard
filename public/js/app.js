@@ -12708,7 +12708,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             form: new __WEBPACK_IMPORTED_MODULE_0_acacha_forms___default.a({ user: '' }),
-            users: [{ 'id': 1, 'name': 'David Martinez' }, { 'id': 2, 'name': 'Sergi Tur' }]
+            users: []
         };
     },
     mounted: function mounted() {
@@ -12719,7 +12719,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         submit: function submit() {
-            this.form.post('/enrollment/user').then(function (response) {}).catch(function (error) {});
+            this.form.post('/enrollment/user').then(function (response) {
+                console.log('TODO');
+            }).catch(function (error) {
+                console.log('ERROR');
+            });
         },
         initialitzeSelect2: function initialitzeSelect2() {
             $(".select2").select2();
@@ -43445,7 +43449,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.submit($event)
       },
       "keydown": function($event) {
-        _vm.form.errors.clear($event.target.name)
+        _vm.form.errors.clear($event.target.user)
       }
     }
   }, [_c('div', {
