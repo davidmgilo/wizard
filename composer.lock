@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "af9c540cc1336f900bfba0251d9d7046",
-    "content-hash": "9454db2045e2f8d73562e36e9f87bd96",
+    "hash": "8219842b8f63cf4f8fc8bf4ade6d3ec7",
+    "content-hash": "1b9b7d85c2cb35719e04d3d83110626a",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -179,6 +179,56 @@
                 "laravel"
             ],
             "time": "2016-12-24 09:40:05"
+        },
+        {
+            "name": "acacha/stateful-eloquent",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/acacha/stateful-eloquent.git",
+                "reference": "ccb6e938b89eb80637d1cce46e4b51f3ab73cc20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/acacha/stateful-eloquent/zipball/ccb6e938b89eb80637d1cce46e4b51f3ab73cc20",
+                "reference": "ccb6e938b89eb80637d1cce46e4b51f3ab73cc20",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.4",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Acacha\\Stateful\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergi Tur Badenas",
+                    "email": "sergiturbadenas@gmail.com"
+                },
+                {
+                    "name": "Mike Rice",
+                    "email": "mike.hj.rice@gmail.com"
+                }
+            ],
+            "description": "State machines for Eloquent classes",
+            "homepage": "https://github.com/mikerice/stateful-eloquent",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "statemachine"
+            ],
+            "time": "2017-04-04 17:23:48"
         },
         {
             "name": "acacha/user",
