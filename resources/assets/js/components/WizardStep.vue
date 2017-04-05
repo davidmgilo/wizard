@@ -6,11 +6,11 @@
 
 <script>
     import voca from 'voca'
-    import {store} from './Store'
+    import {store, state} from './Store'
     export default {
         data () {
           return {
-              currentStep: store.currentStep
+              state: state
           }
         },
         props:{

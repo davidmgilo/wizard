@@ -1,3 +1,11 @@
+export const state = {
+    currentStep: null
+}
+
 export const store = {
-    currentStep: 'usuari'
+    state: state,
+
+    changeStep : function (step) {
+        state.currentStep = step
+    }
 }

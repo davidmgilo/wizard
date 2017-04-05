@@ -11275,9 +11275,18 @@ module.exports = function bind(fn, thisArg) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return state; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return store; });
+var state = {
+    currentStep: null
+};
+
 var store = {
-    currentStep: 'usuari'
+    state: state,
+
+    changeStep: function changeStep(step) {
+        state.currentStep = step;
+    }
 };
 
 /***/ }),
@@ -12839,7 +12848,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             steps: [],
-            currentStep: __WEBPACK_IMPORTED_MODULE_0__Store__["a" /* store */].currentStep
+            state: __WEBPACK_IMPORTED_MODULE_0__Store__["a" /* state */]
         };
     },
     mounted: function mounted() {
@@ -12862,7 +12871,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         stepChanged: function stepChanged(step) {
             console.log(step);
-            __WEBPACK_IMPORTED_MODULE_0__Store__["a" /* store */].currentStep = step;
+            __WEBPACK_IMPORTED_MODULE_0__Store__["b" /* store */].currentStep = step;
         }
     }
 });
@@ -12888,7 +12897,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            currentStep: __WEBPACK_IMPORTED_MODULE_1__Store__["a" /* store */].currentStep
+            state: __WEBPACK_IMPORTED_MODULE_1__Store__["a" /* state */]
         };
     },
 

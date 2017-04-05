@@ -21,12 +21,12 @@
 </template>
 
 <script>
-    import {store} from './Store'
+    import {store, state} from './Store'
     export default {
         data(){
           return {
               steps: [],
-              currentStep: store.currentStep
+              state: state
           }
         },
         mounted() {
