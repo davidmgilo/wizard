@@ -12728,8 +12728,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         submit: function submit() {
+            var _this = this;
+
             this.form.post('/enrollment/user').then(function (response) {
-                console.log('TODO');
+                _this.$emit('next');
             }).catch(function (error) {
                 console.log('ERROR');
             });
@@ -12742,10 +12744,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         fetchUsers: function fetchUsers() {
-            var _this = this;
+            var _this2 = this;
 
             axios.get('/users').then(function (response) {
-                _this.users = response.data;
+                _this2.users = response.data;
             });
         }
     },

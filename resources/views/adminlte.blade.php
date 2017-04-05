@@ -13,7 +13,7 @@
 
 
                 {{--Shared state--}}
-                <wizard>
+                <wizard v-on:next="next">
                     <wizard-step title="Usuari">
                         <form-user></form-user>
                         Step 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et minus quia quis totam veritatis? Animi aut blanditiis esse recusandae velit voluptatem. Consectetur corporis dolor hic maxime nam officiis perferendis, reiciendis.

@@ -32,7 +32,7 @@
             submit () {
                 this.form.post('/enrollment/user')
                     .then( response => {
-                        console.log('TODO')
+                        this.$emit('next')
                     })
                     .catch(error => {
                         console.log('ERROR')
