@@ -5568,3 +5568,6 @@ label,
 .error-page {
   background-color: #ecf0f5;
 }
+[v-cloak] {
+  display: none;
+}

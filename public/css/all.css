@@ -23419,6 +23419,9 @@ label,
 .error-page {
   background-color: #ecf0f5;
 }
+[v-cloak] {
+  display: none;
+}
 
 /* iCheck plugin Square skin, blue
 ----------------------------------- */
