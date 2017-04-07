@@ -57,3 +57,5 @@ Vue.component('login-input-field', require('./components/LoginInputField.vue'));
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+require('./EventBus')
