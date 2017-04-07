@@ -17,11 +17,15 @@
             title:{
                 type: String,
                 required: true
+            },
+            active:{
+                type: [String,Boolean],
+                default: false
             }
         },
         computed : {
             isActive: function() {
-              return this.currentStep === this.id
+              return state.currentStep === this.id
             },
             id: function(){
                 return voca.latinise(voca.camelCase(this.title))
@@ -31,7 +35,7 @@
             }
         },
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component WizardStep mounted.')
         }
     }
 </script>

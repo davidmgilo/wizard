@@ -14,22 +14,21 @@
 
 
                 {{--Shared state--}}
-                <wizard v-on:next="next">
-                    <wizard-step title="Usuari">
-                        <enrollment-form-user></enrollment-form-user>
-                        Step 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et minus quia quis totam veritatis? Animi aut blanditiis esse recusandae velit voluptatem. Consectetur corporis dolor hic maxime nam officiis perferendis, reiciendis.
+                <wizard>
+                    <wizard-step title="Usuari" active="true">
+                        <enrollment-form-user :submit-button="false"></enrollment-form-user>
                     </wizard-step>
                     <wizard-step title="Dades personals">
-                        Step 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores distinctio error expedita ipsa laboriosam libero nulla reprehenderit tenetur. Accusantium animi et fuga itaque iure nam numquam quia sapiente, tempora voluptatum?
+                        <enrollment-form-person :submit-button="false"></enrollment-form-person>
                     </wizard-step>
                     <wizard-step title="Estudi i curs">
-                        Step 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda incidunt iure molestiae mollitia quas repellendus sapiente vel! Aperiam cumque eius facere incidunt maiores nihil nisi provident repellendus sequi voluptatibus!
+                        <enrollment-form-test></enrollment-form-test>
                     </wizard-step>
                     <wizard-step title="Mòduls professionals">
-                        Step 4. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consequuntur dolorum numquam odio quasi qui quisquam quod soluta? At dicta dignissimos doloremque fuga laboriosam numquam perferendis placeat sint velit.
+                        <enrollment-form-test></enrollment-form-test>
                     </wizard-step>
                     <wizard-step title="Unitats formatives">
-                        Step 5. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid aspernatur at dolore, dolores esse in officiis quibusdam quis tempore, temporibus vel. Accusamus ad amet dicta hic, impedit itaque temporibus.
+                        <enrollment-form-test></enrollment-form-test>
                     </wizard-step>
                 </wizard>
 
