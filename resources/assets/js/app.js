@@ -15,9 +15,11 @@ require('./bootstrap');
 
 Vue.component('example', require('./components/Example.vue'));
 
-Vue.component('wizard', require('./components/Wizard.vue'));
-Vue.component('wizard-step', require('./components/WizardStep.vue'));
-Vue.component('form-user', require('./components/FormUser.vue'));
+Vue.component('wizard', require('./components/wizard/Wizard.vue'));
+Vue.component('wizard-step', require('./components/wizard/WizardStep.vue'));
+Vue.component('enrollment-form-user', require('./components/enrollment/FormUser.vue'));
+Vue.component('enrollment-form-person', require('./components/enrollment/FormPerson.vue'));
+Vue.component('enrollment-form-test', require('./components/enrollment/FormTest.vue'));
 
 const app = new Vue({
     el: '#app'

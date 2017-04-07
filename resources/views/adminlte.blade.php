@@ -16,7 +16,7 @@
                 {{--Shared state--}}
                 <wizard v-on:next="next">
                     <wizard-step title="Usuari">
-                        <form-user></form-user>
+                        <enrollment-form-user></enrollment-form-user>
                         Step 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et minus quia quis totam veritatis? Animi aut blanditiis esse recusandae velit voluptatem. Consectetur corporis dolor hic maxime nam officiis perferendis, reiciendis.
                     </wizard-step>
                     <wizard-step title="Dades personals">
