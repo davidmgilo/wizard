@@ -2,13 +2,15 @@
     <form method="post" @submit.prevent="submit" @keydown="form.errors.clear($event.target.user)">
         <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('user') }">
 
-            <label for="user">User FORM:</label>
+            <!-- WET -->
+            <label for="user">PERSON FORM TODO:</label>
 
             <select class="form-control select2" style="width: 100%;">
 
                 <option v-for="user in users" :value="user.id">{{ user.name }}</option>
 
             </select>
+
 
             <span class="help-block" v-if="form.errors.has('user')" v-text="form.errors.get('name')"></span>
 
@@ -18,28 +20,29 @@
 </template>
 
 <script>
-
-    import FormMixin from './formMixin.js'
-
     import Form from 'acacha-forms'
     export default {
-        mixins: [FormMixin],
         data: function () {
             return {
                 form: new Form( { user: ''} ),
                 users: []
             }
         },
+        props: {
+            submitButton:{
+                type:Boolean,
+                default: true
+            }
+        },
         methods: {
             submit() {
                 this.form.post('/enrollment/user')
                         .then( response => {
-                    console.log('Enrollment user form submitted ok')
-                this.$bus.$emit('formSubmit')
-            })
-            .catch( error => {
-                    console.log('Enrollment user form error submitting: ' + error)
-            })
+                            console.log('TODO')
+                        })
+                        .catch( error => {
+                            console.log('ERROR')
+                        })
             },
             initialitzeSelect2() {
                 var component = this
@@ -51,7 +54,7 @@
             fetchUsers() {
                 axios.get('/users').then(response => {
                     this.users = response.data
-            });
+                });
             }
         },
         mounted() {
